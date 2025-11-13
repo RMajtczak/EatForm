@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EatForm", "EatForm.csproj", "{AF2A7E87-9385-4578-B252-CF3434743C19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF2A7E87-9385-4578-B252-CF3434743C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2A7E87-9385-4578-B252-CF3434743C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2A7E87-9385-4578-B252-CF3434743C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2A7E87-9385-4578-B252-CF3434743C19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
