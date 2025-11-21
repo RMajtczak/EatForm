@@ -1,4 +1,5 @@
 
+using EatForm;
 using EatForm.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,8 +12,14 @@ builder.Services.AddDbContext<EatFormDbContext>(options =>
 // Rejestracja kontrolerów
 builder.Services.AddControllers();
 
+builder.Services.AddScoped<DbSeeder>();
 var app = builder.Build();
-
+// Seedowanie danych
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<DbSeeder>();
+    seeder.Seed();
+}
 // Middleware
 app.UseHttpsRedirection();
 app.UseRouting();
