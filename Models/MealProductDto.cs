@@ -7,4 +7,7 @@ public class MealProductDto
     public string ProductName { get; set; } = null!;
     public double Quantity { get; set; }
     public int Calories { get; set; }
+    public int Protein { get; set; }
+    public int Carbs { get; set; }
+    public int Fat { get; set; }
 }

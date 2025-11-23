@@ -11,8 +11,9 @@ builder.Services.AddDbContext<EatFormDbContext>(options =>
 
 // Rejestracja kontrolerów
 builder.Services.AddControllers();
-
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<DbSeeder>();
+builder.Services.AddScoped<IProductService, ProductService>();
 var app = builder.Build();
 // Seedowanie danych
 using (var scope = app.Services.CreateScope())

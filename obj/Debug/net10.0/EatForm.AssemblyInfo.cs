@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EatForm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16d1a512b18b0851e4a7383faa4b6f47661749e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8cd1406701834e2e34b238561fae1071ef3ec57")]
 [assembly: System.Reflection.AssemblyProductAttribute("EatForm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EatForm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

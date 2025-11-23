@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XtJLrN4P5Yw=",
+  "dgSpecHash": "94wo0SzzvMk=",
   "success": true,
   "projectFilePath": "C:\\Users\\rafal\\RiderProjects\\EatForm\\EatForm.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\rafal\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\rafal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\rafal\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\rafal\\.nuget\\packages\\microsoft.build\\17.7.2\\microsoft.build.17.7.2.nupkg.sha512",
     "C:\\Users\\rafal\\.nuget\\packages\\microsoft.build.framework\\17.14.8\\microsoft.build.framework.17.14.8.nupkg.sha512",
