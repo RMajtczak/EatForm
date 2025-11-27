@@ -14,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<DbSeeder>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IExerciseService, ExerciseService>();
 var app = builder.Build();
 // Seedowanie danych
 using (var scope = app.Services.CreateScope())
