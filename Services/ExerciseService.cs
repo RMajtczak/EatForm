@@ -52,7 +52,6 @@ public class ExerciseService : IExerciseService
         var exercise = _dbContext.Exercises.FirstOrDefault(e => e.Id == id);
         if (exercise == null)
             throw new Exception("Exercise not found");
-        
         _mapper.Map(dto, exercise);
         _dbContext.SaveChanges();
     }

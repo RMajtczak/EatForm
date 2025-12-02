@@ -7,5 +7,6 @@ public class CreateExerciseDto
     public int Reps { get; set; }
     public decimal? Weight { get; set; }
     public int? RestTime { get; set; }
+    public int WorkoutId { get; set; }
     
 }

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace EatForm.Controllers;
-[Microsoft.AspNetCore.Components.Route("api/[controller]")]
+[Route("api/exercises")]
 [ApiController]
 public class ExerciseController : ControllerBase
 {
