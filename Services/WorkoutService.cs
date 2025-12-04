@@ -9,7 +9,7 @@ public interface IWorkoutService
     public IEnumerable<WorkoutDto> GetAllWorkouts();
     public WorkoutDto GetWorkoutById(int id);
     int CreateWorkout(CreateWorkoutDto dto);
-    public void UpdateWorkout(int id, WorkoutDto dto);
+    public void UpdateWorkout(UpdateWorkoutDto dto, int id);
     public void DeleteWorkout(int id);
 }
 public class WorkoutService: IWorkoutService
@@ -41,18 +41,18 @@ public class WorkoutService: IWorkoutService
     public int CreateWorkout(CreateWorkoutDto dto)
     {
         var workout = _mapper.Map<Workout>(dto);
+        workout.UserId = 1; // Temporary user assignment
         _dbcontext.Workouts.Add(workout);
         _dbcontext.SaveChanges();
 
         return workout.Id;
     }
     
-    public void UpdateWorkout(int id, WorkoutDto dto)
+    public void UpdateWorkout(UpdateWorkoutDto dto, int id)
     {
         var workout = _dbcontext.Workouts.FirstOrDefault(w => w.Id == id);
         if (workout == null) 
             throw new Exception("Workout not found");
-        
         _mapper.Map(dto, workout);
         _dbcontext.SaveChanges();
     }

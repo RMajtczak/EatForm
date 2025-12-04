@@ -31,9 +31,9 @@ public class WorkoutController: ControllerBase
         return Created($"/api/workouts/{id}", null);
     }
     [HttpPut("{id}")]
-    public ActionResult UpdateWorkout([FromRoute] int id, [FromBody] WorkoutDto dto)
+    public ActionResult UpdateWorkout([FromBody] UpdateWorkoutDto dto, [FromRoute] int id)
     {
-        _workoutService.UpdateWorkout(id, dto);
+        _workoutService.UpdateWorkout(dto, id);
         return Ok();
     }
     [HttpDelete("{id}")]

@@ -9,7 +9,7 @@ public interface IMealProductService
     IEnumerable<MealProductDto> GetAll();
     MealProductDto GetMealProductById(int id);
     int CreateMealProduct(CreateMealProductDto dto);
-    void UpdateMealProduct(CreateMealProductDto dto, int id);
+    void UpdateMealProduct(UpdateMealProductDto dto, int id);
     void DeleteMealProduct(int id);
 }
 public class MealProductService : IMealProductService
@@ -45,7 +45,7 @@ public class MealProductService : IMealProductService
         _dbContext.SaveChanges();
         return mealProduct.Id;
     }
-    public void UpdateMealProduct(CreateMealProductDto dto, int id)
+    public void UpdateMealProduct(UpdateMealProductDto dto, int id)
     {
         var mealProduct = _dbContext.MealProducts.FirstOrDefault(mp => mp.Id == id);
         if (mealProduct == null)

@@ -35,7 +35,7 @@ public class ProductController : ControllerBase
     }
     
     [HttpPut("{id}")]
-    public ActionResult UpdateProduct([FromBody] CreateProductDto dto, [FromRoute] int id)
+    public ActionResult UpdateProduct([FromBody] UpdateProductDto dto, [FromRoute] int id)
     {
         _productService.UpdateProduct(dto, id);
         return Ok();

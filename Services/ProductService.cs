@@ -9,7 +9,7 @@ public interface IProductService
     IEnumerable<ProductDto> GetAllProducts();
     ProductDto GetProductsByIds(int id);
     int CreateProduct(CreateProductDto dto);
-    void UpdateProduct(CreateProductDto dto, int id);
+    void UpdateProduct(UpdateProductDto dto, int id);
     void DeleteProduct(int id);
 }
 public class ProductService : IProductService
@@ -48,7 +48,7 @@ public class ProductService : IProductService
         return product.Id;
     }
     
-    public void UpdateProduct(CreateProductDto dto, int id)
+    public void UpdateProduct(UpdateProductDto dto, int id)
     {
         var product = _dbContext.Products.FirstOrDefault(p => p.Id == id);
         if (product == null)

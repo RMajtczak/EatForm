@@ -9,4 +9,5 @@ public class ProductDto
     public double Carbs { get; set; }
     public double Fat { get; set; }
     public bool IsGlobal { get; set; }
+    public int ProductId { get; set; }
 }

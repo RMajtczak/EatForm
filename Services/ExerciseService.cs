@@ -8,7 +8,7 @@ public interface IExerciseService
     IEnumerable<ExerciseDto> GetAllExercises();
     ExerciseDto GetExerciseById(int id);
     int CreateExercise(CreateExerciseDto dto);
-    void UpdateExercise(CreateExerciseDto dto, int id);
+    void UpdateExercise(UpdateExerciseDto dto, int id);
     void DeleteExercise(int id);
 }
 public class ExerciseService : IExerciseService
@@ -47,7 +47,7 @@ public class ExerciseService : IExerciseService
         return exercise.Id;
     }
     
-    public void UpdateExercise(CreateExerciseDto dto, int id)
+    public void UpdateExercise(UpdateExerciseDto dto, int id)
     {
         var exercise = _dbContext.Exercises.FirstOrDefault(e => e.Id == id);
         if (exercise == null)

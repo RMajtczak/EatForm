@@ -16,6 +16,7 @@ builder.Services.AddScoped<DbSeeder>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IExerciseService, ExerciseService>();
 builder.Services.AddScoped<IWorkoutService, WorkoutService>();
+builder.Services.AddScoped<IMealService, MealService>();
 var app = builder.Build();
 // Seedowanie danych
 using (var scope = app.Services.CreateScope())

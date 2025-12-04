@@ -2,5 +2,6 @@
 
 public class UpdateMealProductDto
 {
-    public double Quantity { get; set; } 
+    public double Quantity { get; set; }
+    public int ProductId { get; set; }
 }

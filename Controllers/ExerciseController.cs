@@ -35,7 +35,7 @@ public class ExerciseController : ControllerBase
     }
     
     [HttpPut("{id}")]
-    public ActionResult UpdateExercise([FromBody] CreateExerciseDto dto, [FromRoute] int id)
+    public ActionResult UpdateExercise([FromBody] UpdateExerciseDto dto, [FromRoute] int id)
     {
         _exerciseService.UpdateExercise(dto, id);
         return Ok();

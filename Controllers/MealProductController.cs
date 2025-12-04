@@ -33,7 +33,7 @@ public class MealProductController : ControllerBase
         return Created($"/api/mealproducts/{id}", null);
     }
     [HttpPut("{id}")]
-    public ActionResult UpdateMealProduct([FromBody] CreateMealProductDto dto, [FromRoute] int id)
+    public ActionResult UpdateMealProduct([FromBody] UpdateMealProductDto dto, [FromRoute] int id)
     {
         _mealProductService.UpdateMealProduct(dto, id);
         return Ok();

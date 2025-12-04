@@ -3,7 +3,7 @@
 public class Meal
 {
     public int Id { get; set; }
-    public string Name { get; set; } = null!;
+    public string? Name { get; set; } = null!;
     public TimeSpan? Time { get; set; }
     public int TotalCalories { get; set; }
     

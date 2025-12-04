@@ -3,7 +3,7 @@
 public class MealProduct
 { 
     public int Id { get; set; }
-    public decimal Quantity { get; set; }
+    public double Quantity { get; set; }
     
     public int MealId { get; set; }
     public Meal Meal { get; set; } = null!;
