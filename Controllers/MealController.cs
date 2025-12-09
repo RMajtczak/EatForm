@@ -26,15 +26,15 @@ public class MealController : ControllerBase
         return Ok(mealDto);
     }
     [HttpPost]
-    public ActionResult CreateMeal([FromBody] CreateMealDto dto)
+    public ActionResult CreateMeal([FromBody] CreateMealDto dto, [FromQuery] int mealPlanId)
     {
-        var mealDto = _mealService.CreateMeal(dto);
-        return Created($"/api/meals/{mealDto.Id}", null);
+        var newMealId = _mealService.CreateMeal(dto, mealPlanId);
+        return Created($"/api/meals/{newMealId}", null);
     }
     [HttpPut("{id}")]
     public ActionResult UpdateMeal([FromBody] UpdateMealDto dto, [FromRoute] int id)
     {
-        _mealService.UpdateMeal(id, dto);
+        _mealService.UpdateMeal(dto, id);
         return Ok();
     }
     [HttpDelete("{id}")]

@@ -14,7 +14,8 @@ public class EatFormMappingProfile : Profile
             .ForAllMembers(opts =>
                 opts.Condition((src, dest, value) => value != null)); 
         
-        CreateMap<Meal, MealDto>();
+        CreateMap<Meal, MealDto>()
+            .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.MealProducts));
         CreateMap<CreateMealDto, Meal>();
         CreateMap<UpdateMealDto, Meal>()
             .ForAllMembers(opt => opt.Condition((src, dest, value) => value != null));
