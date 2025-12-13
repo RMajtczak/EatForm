@@ -46,5 +46,6 @@ public class EatFormMappingProfile : Profile
         CreateMap<CreateWorkoutDto, Workout>();
         CreateMap<UpdateWorkoutDto, Workout>()
             .ForAllMembers(opt => opt.Condition((src, dest, value) => value != null));
+        CreateMap<RegisterUserDto, User>();
     }
 }

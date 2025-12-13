@@ -12,7 +12,8 @@ public class User
     public decimal? Height { get; set; }
     public string? ActivityLevel { get; set; }
     public string? Goal { get; set; }
-    public string Role { get; set; } = "user";
+    public int RoleId { get; set; }
+    public Role Role { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     
     public ICollection<MealPlan>? MealPlans { get; set; }

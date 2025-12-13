@@ -129,14 +129,13 @@ namespace EatForm.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<TimeSpan?>("Time")
                         .HasColumnType("interval");
 
-                    b.Property<int>("TotalCalories")
-                        .HasColumnType("integer");
+                    b.Property<double>("TotalCalories")
+                        .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
@@ -163,8 +162,8 @@ namespace EatForm.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("TotalCalories")
-                        .HasColumnType("integer");
+                    b.Property<double>("TotalCalories")
+                        .HasColumnType("double precision");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -190,8 +189,8 @@ namespace EatForm.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Quantity")
-                        .HasColumnType("numeric");
+                    b.Property<double>("Quantity")
+                        .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
@@ -242,6 +241,23 @@ namespace EatForm.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("EatForm.Entities.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
             modelBuilder.Entity("EatForm.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -279,14 +295,15 @@ namespace EatForm.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer");
 
                     b.Property<decimal?>("Weight")
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
@@ -453,6 +470,17 @@ namespace EatForm.Migrations
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Creator");
+                });
+
+            modelBuilder.Entity("EatForm.Entities.User", b =>
+                {
+                    b.HasOne("EatForm.Entities.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("EatForm.Entities.Workout", b =>

@@ -17,6 +17,7 @@ public class EatFormDbContext : DbContext
     public DbSet<Exercise> Exercises { get; set; }
     public DbSet<ForumPost> ForumPosts { get; set; }
     public DbSet<ForumThread> ForumThreads { get; set; }
+    public DbSet<Role> Roles { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -105,6 +106,13 @@ public class EatFormDbContext : DbContext
                 .WithMany()
                 .HasForeignKey(p => p.CreatorId)
                 .OnDelete(DeleteBehavior.SetNull);
+            
+            modelBuilder.Entity<User>()
+                .Property(u => u.Email)
+                .IsRequired();
+            modelBuilder.Entity<Role>()
+                .Property(r => r.Name)
+                .IsRequired();
     }
     
     
